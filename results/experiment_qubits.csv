@@ -1,0 +1,4 @@
+configuration,features_used,n_qubits,reps,entanglement,accuracy,precision,recall,f1,roc_auc,best_C,cv_f1,kernel_time_s,training_time_s
+QSVM ZZ 4 qubits (25 training),4 PCA components; 25 quantum training patients,4,2,linear,0.7017543859649122,0.7222222222222222,0.30952380952380953,0.43333333333333335,0.757936507936508,10.0,0.1,33.426383,33.47814057408142
+QSVM ZZ 6 qubits (25 training),6 PCA components; 25 quantum training patients,6,2,linear,0.631578947368421,0.0,0.0,0.0,0.6021825396825397,0.1,0.0,43.776914,43.82711088606262
+QSVM ZZ 8 qubits (25 training),8 PCA components; 25 quantum training patients,8,2,linear,0.631578947368421,0.0,0.0,0.0,0.601521164021164,0.1,0.0,57.121509,57.17764179342652

@@ -1,0 +1,9 @@
+package,version
+qiskit,2.6.1
+qiskit-aer,0.18.2
+qiskit-machine-learning,0.9.1
+scikit-learn,1.8.0
+numpy,2.3.3
+pandas,2.3.3
+xgboost,3.2.0
+shap,0.51.0

@@ -1,0 +1,13 @@
+original_patient_row,actual,predicted,decision_score,absolute_distance_from_boundary,why_it_may_be_hard
+205,Malignant,Benign,-0.004314292105054018,0.004314292105054018,The signed SVM score shows how close the case is to the learned boundary.
+75,Malignant,Benign,-0.04445435903094136,0.04445435903094136,The signed SVM score shows how close the case is to the learned boundary.
+563,Malignant,Benign,-0.13282575601923957,0.13282575601923957,The signed SVM score shows how close the case is to the learned boundary.
+277,Malignant,Benign,-0.17370082556146288,0.17370082556146288,The signed SVM score shows how close the case is to the learned boundary.
+207,Malignant,Benign,-0.18431640557730095,0.18431640557730095,The signed SVM score shows how close the case is to the learned boundary.
+99,Malignant,Benign,-0.24498126505378187,0.24498126505378187,The signed SVM score shows how close the case is to the learned boundary.
+73,Malignant,Benign,-0.2884718871631206,0.2884718871631206,The signed SVM score shows how close the case is to the learned boundary.
+318,Benign,Malignant,0.4032551994226502,0.4032551994226502,The signed SVM score shows how close the case is to the learned boundary.
+208,Benign,Malignant,0.41762689631410216,0.41762689631410216,The signed SVM score shows how close the case is to the learned boundary.
+86,Malignant,Benign,-0.5147527702660168,0.5147527702660168,The signed SVM score shows how close the case is to the learned boundary.
+100,Malignant,Benign,-0.8141153497245697,0.8141153497245697,The signed SVM score shows how close the case is to the learned boundary.
+385,Malignant,Benign,-1.0852349809595194,1.0852349809595194,The signed SVM score shows how close the case is to the learned boundary.

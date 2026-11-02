@@ -1,0 +1,11 @@
+measure,value
+dataset source,scikit-learn bundled copy of WDBC (UCI fetch unavailable)
+total patients,569
+original features,30
+missing feature values,0
+benign patients,357
+malignant patients,212
+training patients,455
+test patients,114
+main QSVM training patients,50
+qubit-count experiment training patients,25

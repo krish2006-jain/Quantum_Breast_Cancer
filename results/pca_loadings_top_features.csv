@@ -1,0 +1,21 @@
+component,rank_by_absolute_loading,original_feature,loading
+1,1,mean concave points,0.2603828139114653
+1,2,mean concavity,0.2577613706592245
+1,3,worst concave points,0.24936697384083334
+1,4,mean compactness,0.2419282713697345
+1,5,worst perimeter,0.2354938152573131
+2,1,mean fractal dimension,0.36664780162053934
+2,2,worst fractal dimension,0.27747054378077385
+2,3,fractal dimension error,0.27620347835983794
+2,4,mean radius,-0.23977589989352127
+2,5,mean area,-0.23692514696173678
+3,1,texture error,0.3652493849039927
+3,2,smoothness error,0.2969970929803045
+3,3,symmetry error,0.2951812769142201
+3,4,worst smoothness,-0.2734054863863191
+3,5,radius error,0.26160085561051727
+4,1,worst texture,0.6253073793422261
+4,2,mean texture,0.6045671549611109
+4,3,texture error,0.36544532678323516
+4,4,mean smoothness,-0.17231940319902264
+4,5,area error,-0.11534875225147724
