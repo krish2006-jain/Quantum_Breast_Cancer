@@ -60,33 +60,7 @@ In classical Support Vector Machines (SVMs), the **Kernel Trick** calculates inn
 
 ### Quantum Kernel Architecture Flowchart
 
-```mermaid
-flowchart LR
-    subgraph ClassicalInput["Classical Input Space"]
-        X["Patient Vector x\n(4 PCA Components)"]
-        Y["Patient Vector x'\n(4 PCA Components)"]
-    end
-
-    subgraph QuantumEncoding["Quantum Hilbert Space (2^4 = 16 Dim)"]
-        X --> S1["Angle Scaling to [0, π]"]
-        Y --> S2["Angle Scaling to [0, π]"]
-        S1 --> U1["Feature Map Circuit U(x)\n(H, Rz, CNOT)"]
-        S2 --> U2["Feature Map Circuit U(x')\n(H, Rz, CNOT)"]
-        U1 --> Q1["Quantum State |φ(x)⟩"]
-        U2 --> Q2["Quantum State |φ(x')⟩"]
-    end
-
-    subgraph KernelMatrix["Fidelity Kernel Estimation"]
-        Q1 --> Overlap["Compute-Uncompute Overlap\n|⟨φ(x)|φ(x')⟩|²"]
-        Q2 --> Overlap
-        Overlap --> K["Kernel Similarity Score\nK(x, x') ∈ [0, 1]"]
-    end
-
-    subgraph Learning["Boundary Optimization"]
-        K --> SVM["Precomputed Support Vector Machine\nFind Optimal Hyperplane"]
-        SVM --> Pred["Diagnostic Output\nBenign (0) vs. Malignant (1)"]
-    end
-```
+![Quantum Kernel Architecture Flowchart](results/flowchart_quantum_kernel.png)
 
 ### Simple Explanations of Key Terms:
 * **Support Vector Machine (SVM):** Finds the widest possible safety margin (decision boundary) between two classes of data.
@@ -99,40 +73,9 @@ flowchart LR
 
 ## 🏗️ 3. End-to-End System Architecture
 
-### System Flowchart
+### System Pipeline Flowchart
 
-The overall research and computational pipeline implemented in [`wdbc_qsvm_notebook.ipynb`](wdbc_qsvm_notebook.ipynb):
-
-```mermaid
-flowchart TD
-    A["Raw WDBC Dataset\n(569 Patients, 30 Continuous Features)"] --> B["Data Ingestion & Label Binarization\n(Malignant = 1, Benign = 0)"]
-    B --> C["Stratified 80/20 Train-Test Split"]
-    
-    C --> D1["Training Partition\n(455 Patients)"]
-    C --> D2["Held-out Test Partition\n(114 Patients)"]
-    
-    D1 --> E["StandardScaler\n(Fitted on Train Split Only)"]
-    E --> F["PCA Dimensionality Reduction\n(30 Features Compressed to 4 Components)"]
-    D2 -.->|Transform with Train Stats| E
-    D2 -.->|Transform with Train Stats| F
-    
-    F --> G1["Branch A: Classical ML Suite\n(7 Algorithms x 2 Feature Regimes)"]
-    G1 --> H1["Hyperparameter Grid Search\n(5-Fold Stratified Cross-Validation)"]
-    H1 --> I1["Classical Predictions on Test Set"]
-    
-    F --> G2["Branch B: Quantum Feature Engineering\n(MinMax Angle Mapping to [0, π])"]
-    G2 --> H2["Quantum Feature Maps\n(ZFeatureMap vs. ZZFeatureMap)"]
-    H2 --> J2["Fidelity Kernel Simulation\n(Statevector Overlap Matrices)"]
-    J2 --> K2["QSVM Training\n(SVC with Precomputed Kernel, C Tuning)"]
-    K2 --> I2["Quantum Predictions on Test Set"]
-    
-    I1 --> M["Unified Evaluation & Benchmarking\n(Accuracy, Precision, Recall, F1, ROC-AUC)"]
-    I2 --> M
-    
-    M --> N["Ablations & Sensitivity Analysis\n(Repetitions, Entanglement, Qubit Widths)"]
-    M --> P["Model Explainability & Auditing\n(SHAP on XGBoost + Error Margin Inspection)"]
-    M --> Q["Statistical Reliability Test\n(5-Seed Multi-Split Cross-Validation)"]
-```
+![System Architecture Pipeline Flowchart](results/flowchart_system_architecture.png)
 
 ---
 
